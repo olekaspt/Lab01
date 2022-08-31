@@ -46,7 +46,8 @@ Node * Node::getNext() const
 Node::~Node()
 {
 	std::cout << "Deleting node with value " << m_value << std::endl;
-	//TODO - hint, you can recursively handle this which would require some code
+	delete m_next;
+	// you can recursively handle this which would require some code
 	// Otherwise you need to delete each node individuall in the owner of the Nodes (i.e. the LinkedList)
 }
 
