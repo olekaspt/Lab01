@@ -15,6 +15,15 @@ ILinkedList::ILinkedList() : m_count(0)
 
 }
 
+/** Returns true  if list is empty, otherwise true */
+bool ILinkedList::isEmpty() const
+{
+	//TODO - hint use m_count
+
+	return false;
+	
+}
+
 Node::Node() : m_value(-1), m_next(nullptr)
 {
 
@@ -55,12 +64,7 @@ PointerBasedLinkedList::PointerBasedLinkedList() : ILinkedList(), m_head(nullptr
 {
 
 }
-/** Returns true  if list is empty, otherwise true */
-bool PointerBasedLinkedList::isEmpty() const
-{
-	return false;
-	//TODO
-}
+
 /** Adds a value to the LinkedList.  Return true if able to, otherwise false */
 bool PointerBasedLinkedList::add(int val)
 {
@@ -102,11 +106,6 @@ ArrayBasedLinkedList::ArrayBasedLinkedList() : ILinkedList()
 	// you got it for free :)
 }
 
-bool ArrayBasedLinkedList::isEmpty() const
-{
-	return true;
-	//TODO
-}
 bool ArrayBasedLinkedList::add(int val)
 {
 	//TODO
