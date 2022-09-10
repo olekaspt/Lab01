@@ -18,19 +18,20 @@ The grade on this assignment will be determined by:
 
 Participation Rubric
 Participation rubric of teammates.  List out for your all team members how much they participated.
+```
 	             Member1	Member2	Member3
 Member1 (opinion)	33	     33	     33
 Member2 (opinion)	33	     33	     33
 Member3 (opinion)	33	     33	     33
-			
+```			
 			
 Example 			
-	Member1	Member2	Member3
+```
 	             Member1	Member2	Member3
 Member1 (opinion)	33	     33	     33
 Member2 (opinion)	20	     40	     40
 Member3 (opinion)	20	     40	     40
-
+```
 
 
 For you submission, turn in LinkedList.cpp and PDF with participation rubric
