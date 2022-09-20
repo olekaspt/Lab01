@@ -10,13 +10,13 @@
 
 using namespace std;
 
-ILinkedList::ILinkedList() : m_count(0)
+IList::IList() : m_count(0)
 {
 
 }
 
 /** Returns true  if list is empty, otherwise true */
-bool ILinkedList::isEmpty() const
+bool IList::isEmpty() const
 {
 	//TODO - hint use m_count
 
@@ -24,43 +24,9 @@ bool ILinkedList::isEmpty() const
 	
 }
 
-Node::Node() : m_value(-1), m_next(nullptr)
-{
 
-}
-Node::Node(int val) : m_value(val), m_next(nullptr)
-{
 
-}
-Node::Node(int val, Node * nextNode) : m_value(val), m_next(nextNode)
-{
-
-}
-void Node::setItem(const int& val)
-{
-	m_value = val;
-}
-void Node::setNext(Node* nextNodePtr)
-{
-	m_next = nextNodePtr;
-}
-int Node::getItem() const
-{
-	return m_value;
-}
-Node * Node::getNext() const
-{
-	return m_next;
-}
-Node::~Node()
-{
-	std::cout << "Deleting node with value " << m_value << std::endl;
-	delete m_next;
-	// you can recursively handle this which would require some code
-	// Otherwise you need to delete each node individuall in the owner of the Nodes (i.e. the LinkedList)
-}
-
-PointerBasedLinkedList::PointerBasedLinkedList() : ILinkedList(), m_head(nullptr)
+PointerBasedLinkedList::PointerBasedLinkedList() : IList(), m_head(nullptr), m_tail(nullptr)
 {
 
 }
@@ -82,13 +48,16 @@ bool PointerBasedLinkedList::remove(int val)
 /** Remove  all elements from LinkedList */
 void PointerBasedLinkedList::clear()
 {
-	 
-    //TODO
+	delete m_head;
+
+	//TODO - 
+	// dangling pointer warning
+	// what other private data members should be adjusted?
 }
 PointerBasedLinkedList::~PointerBasedLinkedList()
 {
-	//TODO - maybe not depending on how you implement Node::~Node
-	delete m_head;
+	clear();
+	
 }
 
 std::string PointerBasedLinkedList::toString() const
@@ -100,32 +69,32 @@ std::string PointerBasedLinkedList::toString() const
 	return str;
 }
 
-ArrayBasedLinkedList::ArrayBasedLinkedList() : ILinkedList()
+ArrayBasedList::ArrayBasedList() : IList()
 {
     m_count = 0;
 	// you got it for free :)
 }
 
-bool ArrayBasedLinkedList::add(int val)
+bool ArrayBasedList::add(int val)
 {
 	//TODO
 	return false;
 }
-bool ArrayBasedLinkedList::remove(int val)
+bool ArrayBasedList::remove(int val)
 {
 	//TODO
 	return false;
 }
-void ArrayBasedLinkedList::clear()
+void ArrayBasedList::clear()
 {
 	//TODO
 }
-ArrayBasedLinkedList::~ArrayBasedLinkedList()
+ArrayBasedList::~ArrayBasedList()
 {
-
+	clear();
 }
 
-std::string ArrayBasedLinkedList::toString() const
+std::string ArrayBasedList::toString() const
 {
 	string str = "";
 	

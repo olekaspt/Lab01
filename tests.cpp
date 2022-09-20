@@ -3,7 +3,7 @@
 #include <gtest/gtest.h>
 
 
-	void TestEmpty(ILinkedList& list)
+	void TestEmpty(IList& list)
 	{
 			ASSERT_TRUE(list.isEmpty());
 
@@ -21,15 +21,15 @@
 
 		}
 		
-        TEST(ArrayBasedLinkedList, TestEmpy) 
+        TEST(ArrayBasedList, TestEmpy) 
 		{           
-			ArrayBasedLinkedList linkedList = ArrayBasedLinkedList();
+			ArrayBasedList linkedList = ArrayBasedList();
 
 			TestEmpty(linkedList);
 
 		}
 
-		void Test1Add(ILinkedList& list)
+		void Test1Add(IList& list)
 		{
 			ASSERT_TRUE(list.isEmpty());
 			ASSERT_TRUE(list.add(1));
@@ -43,9 +43,9 @@
 
 		}
 
-		TEST(ArrayBasedLinkedList, Test1Add)
+		TEST(ArrayBasedList, Test1Add)
 		{
-			ArrayBasedLinkedList linkedList =  ArrayBasedLinkedList();
+			ArrayBasedList linkedList =  ArrayBasedList();
 			Test1Add(linkedList);
 		}
 
@@ -55,7 +55,7 @@
 			Test1Add(linkedList);
 		}
 
-		void Test2Add(ILinkedList & list)
+		void Test2Add(IList & list)
 		{
 			ASSERT_TRUE(list.isEmpty());
 			ASSERT_TRUE(list.add(1));
@@ -69,9 +69,9 @@
 			ASSERT_TRUE(list.isEmpty());
 		}
 
-		TEST(ArrayBasedLinkedList, Test2Add)
+		TEST(ArrayBasedList, Test2Add)
 		{
-			ArrayBasedLinkedList linkedList = ArrayBasedLinkedList();
+			ArrayBasedList linkedList = ArrayBasedList();
 			Test2Add(linkedList);
 
 		}
@@ -83,7 +83,7 @@
 
 		}
 
-		void Test3Add(ILinkedList& list)
+		void Test3Add(IList& list)
 		{
 			ASSERT_TRUE(list.isEmpty());
 			ASSERT_TRUE(list.add(1));
@@ -98,9 +98,9 @@
 			ASSERT_TRUE(list.isEmpty());
 		}
 
-		TEST(ArrayBasedLinkedList, Test3Add)
+		TEST(ArrayBasedList, Test3Add)
 		{
-			ArrayBasedLinkedList linkedList = ArrayBasedLinkedList();
+			ArrayBasedList linkedList = ArrayBasedList();
 			Test3Add(linkedList);
 
 		}
@@ -113,7 +113,7 @@
 
 		}
 
-		void Test11Add(ILinkedList& list, bool isPointerBased)
+		void Test11Add(IList& list, bool isPointerBased)
 		{
 			ASSERT_TRUE(list.isEmpty());
 			ASSERT_TRUE(list.add(1));
@@ -150,9 +150,9 @@
 			ASSERT_TRUE(list.isEmpty());
 		}
 
-		TEST(ArrayBasedLinkedList, Test11Add)
+		TEST(ArrayBasedList, Test11Add)
 		{
-			ArrayBasedLinkedList linkedList = ArrayBasedLinkedList();
+			ArrayBasedList linkedList = ArrayBasedList();
 			Test11Add(linkedList, false);
 		}
 
@@ -163,7 +163,7 @@
 
 		}
 
-		void TestRemoveNonExistant(ILinkedList& list)
+		void TestRemoveNonExistant(IList& list)
 		{
 			ASSERT_TRUE(list.isEmpty());
 			ASSERT_TRUE(list.add(1));
@@ -180,9 +180,9 @@
 			ASSERT_TRUE(list.isEmpty());
 		}
 
-		TEST(ArrayBasedLinkedList, TestRemoveNonExistant)
+		TEST(ArrayBasedList, TestRemoveNonExistant)
 		{
-			ArrayBasedLinkedList linkedList = ArrayBasedLinkedList();
+			ArrayBasedList linkedList = ArrayBasedList();
 			TestRemoveNonExistant(linkedList);
 
 		}
@@ -194,7 +194,7 @@
 
 		}
 
-		void TestBeginingRemove(ILinkedList& list)
+		void TestBeginingRemove(IList& list)
 		{
 			ASSERT_TRUE(list.isEmpty());
 			ASSERT_TRUE(list.add(1));
@@ -211,9 +211,9 @@
 			ASSERT_TRUE(list.isEmpty());
 		}
 
-		TEST(ArrayBasedLinkedList, TestBeginingRemove)
+		TEST(ArrayBasedList, TestBeginingRemove)
 		{
-			ArrayBasedLinkedList linkedList = ArrayBasedLinkedList();
+			ArrayBasedList linkedList = ArrayBasedList();
 			TestBeginingRemove(linkedList);
 
 		}
@@ -225,7 +225,7 @@
 
 		}
 
-		void TestMiddleRemove(ILinkedList& list)
+		void TestMiddleRemove(IList& list)
 		{
 			ASSERT_TRUE(list.isEmpty());
 			ASSERT_TRUE(list.add(1));
@@ -249,14 +249,14 @@
 
 		}
 
-		TEST(ArrayBasedLinkedList, TestMiddleRemove)
+		TEST(ArrayBasedList, TestMiddleRemove)
 		{
-			ArrayBasedLinkedList linkedList = ArrayBasedLinkedList();
+			ArrayBasedList linkedList = ArrayBasedList();
 			TestMiddleRemove(linkedList);
 
 		}
 
-		void TestEndRemove(ILinkedList& list)
+		void TestEndRemove(IList& list)
 		{
 			ASSERT_TRUE(list.isEmpty());
 			ASSERT_TRUE(list.add(1));
@@ -273,9 +273,9 @@
 			ASSERT_TRUE(list.isEmpty());
 		}
 
-		TEST(ArrayBasedLinkedList, TestEndRemove)
+		TEST(ArrayBasedList, TestEndRemove)
 		{
-			ArrayBasedLinkedList linkedList = ArrayBasedLinkedList();
+			ArrayBasedList linkedList = ArrayBasedList();
 			TestEndRemove(linkedList);
 
 		}
@@ -287,7 +287,7 @@
 
 		}
 
-		void TestMultipleRemove(ILinkedList& list)
+		void TestMultipleRemove(IList& list)
 		{
 			ASSERT_TRUE(list.isEmpty());
 			ASSERT_TRUE(list.add(1));
@@ -319,9 +319,9 @@
 			ASSERT_TRUE(list.isEmpty());
 		}
 
-		TEST(ArrayBasedLinkedList, TestMultipleRemove)
+		TEST(ArrayBasedList, TestMultipleRemove)
 		{
-			ArrayBasedLinkedList linkedList = ArrayBasedLinkedList();
+			ArrayBasedList linkedList = ArrayBasedList();
 			TestMultipleRemove(linkedList);
 
 		}

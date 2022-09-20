@@ -1,14 +1,19 @@
+#pragma once
 
 #include <string>
+#include "Node.h"
 
-// This class is exported from the LinkedList.dll
-class  ILinkedList {
+
+class  IList {
 public:
 
-	ILinkedList();
+	IList();
 
 	/** Returns true  if list is empty, otherwise false */
 	virtual bool isEmpty() const ;
+	/** Returns the number of elements in the LinkedList */
+	virtual int getSize() const;
+
 	/** Adds a value to the LinkedList.  Adds the value to the end of the List.  Return true if able to, otherwise false */
 	virtual bool add(int val) = 0;
 	/** Remove a value to the LinkedList.  Return true if able to, otherwise false.
@@ -19,34 +24,20 @@ public:
         /** Generates a string of the contents of the LinkedList, and lists them in order.  */
 	virtual std::string toString() const = 0;
 
+	
+
 protected:
 	int m_count;
 
 };
 
-class Node
-{
-private:
-	int m_value;
-	Node * m_next;
-
-public:
-	Node();
-	Node(int val);
-	Node(int val, Node * nextNode);
-	void setItem(const int& val);
-	void setNext(Node* nextNodePtr);
-	int getItem() const;
-	Node * getNext() const;
-	virtual ~Node();
-	
-};
 
 
-class ArrayBasedLinkedList : public ILinkedList
+
+class ArrayBasedList : public IList
 {
 public:
-	ArrayBasedLinkedList();
+	ArrayBasedList();
 	/** Adds a value to the LinkedList.  Adds the value to the end of the List. Return true if able to, otherwise false */
 	bool add(int val) override;
 	/** Remove a value to the LinkedList.  Return true if able to, otherwise false.
@@ -54,7 +45,7 @@ public:
 	bool remove(int val) override;
 	/** Remove  all elements from LinkedList */
 	void clear() override;
-	virtual ~ArrayBasedLinkedList() ;
+	virtual ~ArrayBasedList() ;
 	/** Generates a string of the contents of the LinkedList, and lists them in order.  */
 	std::string toString() const override;
 private:
@@ -62,7 +53,7 @@ private:
 
 };
 
-class PointerBasedLinkedList : public ILinkedList
+class PointerBasedLinkedList : public IList
 {
 public:
 	PointerBasedLinkedList();

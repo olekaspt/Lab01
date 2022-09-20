@@ -1,7 +1,7 @@
 # Lab01
 
 EECE2080C Lab 01  
-Revised 28-Aug-2022
+Revised 20-Sep-2022
 
 Objective: The goal of this lab is to practice implementing C++ classes, dealing with pointer, memory allocation, memory deletion.
 
