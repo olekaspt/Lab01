@@ -13,7 +13,7 @@ Assignment:
 
 
 The grade on this assignment will be determined by:  
-75% On having the testcases pass legitimated (see note in syllabus about dishonesty)
+75% On having the testcases passing (see note in syllabus about dishonesty)
 20% on code style and programming
 
 Participation Rubric
