@@ -15,7 +15,7 @@ IList::IList() : m_count(0)
 
 }
 
-/** Returns true  if list is empty, otherwise true */
+
 int IList::getSize() const
 {
 	return m_count;
