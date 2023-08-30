@@ -5,6 +5,8 @@ Revised 20-Sep-2022
 
 Objective: The goal of this lab is to practice implementing C++ classes, dealing with pointer, memory allocation, memory deletion.
 
+See Code and Lab Report Standards - https://github.com/olekaspt/LabStandards
+
 Assignment:
 1.	Access Lab01 code by cloning this repo - git clone https://github.com/olekaspt/Lab01.git  
 1.	Run the Unit Tests and see that some of them fail.   Now we are ready to provide the implementation needed to ArrayBasedLinkedList and PointerBasedLinkedList.
