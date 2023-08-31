@@ -14,6 +14,9 @@ Assignment:
 1.	Things to keep in mind, try not to change the signature and data members of class.   As you will only be providing LinkedList.cpp.   So you shouldn’t modify the signature/structure so that the UnitTests will not compile.  As the UnitTests are going to be used to grade the HW.
 
 
+Hints:
+Do the clear(), ToString(), and IsEmpty() methods first.  And then slowly work you way down the tests.
+
 The grade on this assignment will be determined by:  
 75% On having the testcases passing (see note in syllabus about dishonesty)
 25% on code style and programming
