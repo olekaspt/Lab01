@@ -22,10 +22,11 @@ int IList::getSize() const
 	
 }
 
-/** Returns true  if list is empty, otherwise true */
+
 bool IList::isEmpty() const
 {
 	//TODO - hint use m_count
+
 
 	return false;
 	
@@ -38,21 +39,20 @@ PointerBasedLinkedList::PointerBasedLinkedList() : IList(), m_head(nullptr), m_t
 
 }
 
-/** Adds a value to the LinkedList.  Return true if able to, otherwise false */
+
 bool PointerBasedLinkedList::add(int val)
 {
 	return false;
 	//TODO
 }
-/** Remove a value to the LinkedList.  Return true if able to, otherwise false.
-Will only remove one entry if there are multiple entries with the same value */
+
 bool PointerBasedLinkedList::remove(int val)
 {
 	//TODO
 	return false;
 }
 
-/** Remove  all elements from LinkedList */
+
 void PointerBasedLinkedList::clear()
 {
 	delete m_head;

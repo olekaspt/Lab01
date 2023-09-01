@@ -11,6 +11,7 @@
 
 			list.clear();
 			ASSERT_TRUE(list.isEmpty());
+			ASSERT_TRUE(list.getSize() == 0);
 
 	}
 		TEST(PointerBasedLinkedList,TestEmpy)
@@ -37,10 +38,11 @@
 			ASSERT_FALSE(list.isEmpty());
 
 			ASSERT_EQ(std::string("1"), list.toString());
+			ASSERT_TRUE(list.getSize() == 1);
 
 			list.clear();
 			ASSERT_TRUE(list.isEmpty());
-
+			ASSERT_TRUE(list.getSize() == 0);
 		}
 
 		TEST(ArrayBasedList, Test1Add)
@@ -64,9 +66,10 @@
 			ASSERT_FALSE(list.isEmpty());
 
 			ASSERT_EQ(std::string("1 2"), list.toString());
-
+			ASSERT_TRUE(list.getSize() == 2);
 			list.clear();
 			ASSERT_TRUE(list.isEmpty());
+			ASSERT_TRUE(list.getSize() == 0);
 		}
 
 		TEST(ArrayBasedList, Test2Add)
@@ -93,9 +96,11 @@
 			ASSERT_FALSE(list.isEmpty());
 
 			ASSERT_EQ(std::string("1 2 3"), list.toString());
+			ASSERT_TRUE(list.getSize() == 3);
 
 			list.clear();
 			ASSERT_TRUE(list.isEmpty());
+			ASSERT_TRUE(list.getSize() == 0);
 		}
 
 		TEST(ArrayBasedList, Test3Add)
@@ -140,14 +145,17 @@
 			if(isPointerBased)
 			{
 				ASSERT_EQ(std::string("1 2 3 4 5 6 7 8 9 10 11"), list.toString());
+				ASSERT_TRUE(list.getSize() == 11);
 			}
 			else
 			{
 				ASSERT_EQ(std::string("1 2 3 4 5 6 7 8 9 10"), list.toString());//Capacity is 11 so won't add
+				ASSERT_TRUE(list.getSize() == 10);
 			}
 
 			list.clear();
 			ASSERT_TRUE(list.isEmpty());
+			ASSERT_TRUE(list.getSize() == 0);
 		}
 
 		TEST(ArrayBasedList, Test11Add)
@@ -175,9 +183,11 @@
 			ASSERT_FALSE(list.isEmpty());
 
 			ASSERT_EQ(std::string("1 2 3"), list.toString());
+			ASSERT_TRUE(list.getSize() == 3);
 
 			list.clear();
 			ASSERT_TRUE(list.isEmpty());
+			ASSERT_TRUE(list.getSize() == 0);
 		}
 
 		TEST(ArrayBasedList, TestRemoveNonExistant)
@@ -206,9 +216,11 @@
 			ASSERT_FALSE(list.isEmpty());
 
 			ASSERT_EQ(std::string("2 3"), list.toString());
+			ASSERT_TRUE(list.getSize() == 2);
 
 			list.clear();
 			ASSERT_TRUE(list.isEmpty());
+			ASSERT_TRUE(list.getSize() == 0);
 		}
 
 		TEST(ArrayBasedList, TestBeginingRemove)
@@ -237,9 +249,11 @@
 			ASSERT_FALSE(list.isEmpty());
 
 			ASSERT_EQ(std::string("1 3"), list.toString());
+			ASSERT_TRUE(list.getSize() == 2);
 
 			list.clear();
 			ASSERT_TRUE(list.isEmpty());
+			ASSERT_TRUE(list.getSize() == 0);
 		}
 
 		TEST(PointerBasedLinkedList, TestMiddleRemove)
@@ -268,9 +282,11 @@
 			ASSERT_FALSE(list.isEmpty());
 
 			ASSERT_EQ(std::string("1 2"), list.toString());
+			ASSERT_TRUE(list.getSize() == 2);
 
 			list.clear();
 			ASSERT_TRUE(list.isEmpty());
+			ASSERT_TRUE(list.getSize() == 0);
 		}
 
 		TEST(ArrayBasedList, TestEndRemove)
@@ -314,9 +330,11 @@
 			ASSERT_FALSE(list.isEmpty());
 
 			ASSERT_EQ(std::string("1 3 5 7 9 10"), list.toString());
+			ASSERT_TRUE(list.getSize() == 6);
 
 			list.clear();
 			ASSERT_TRUE(list.isEmpty());
+			ASSERT_TRUE(list.getSize() == 0);
 		}
 
 		TEST(ArrayBasedList, TestMultipleRemove)
@@ -330,6 +348,53 @@
 		{
 			PointerBasedLinkedList linkedList = PointerBasedLinkedList();
 			TestMultipleRemove(linkedList);
+
+		}
+
+
+		void TestAddingZero(IList& list)
+		{
+			ASSERT_TRUE(list.isEmpty());
+			ASSERT_TRUE(list.add(0));
+			ASSERT_TRUE(list.add(0));
+			ASSERT_TRUE(list.add(0));
+			ASSERT_TRUE(list.add(0));
+			ASSERT_TRUE(list.add(0));
+			ASSERT_TRUE(list.add(0));
+			ASSERT_TRUE(list.add(0));
+			ASSERT_TRUE(list.add(0));
+			ASSERT_TRUE(list.add(0));
+			ASSERT_TRUE(list.add(0));
+
+			ASSERT_TRUE(list.remove(2));
+			ASSERT_TRUE(list.remove(4));
+			ASSERT_TRUE(list.remove(6));
+			ASSERT_TRUE(list.remove(8));
+
+			ASSERT_FALSE(list.remove(2));
+			ASSERT_FALSE(list.remove(4));
+			ASSERT_FALSE(list.remove(6));
+			ASSERT_FALSE(list.remove(8));
+
+			ASSERT_TRUE(list.getSize() == 10);
+
+			ASSERT_EQ(std::string("0 0 0 0 0 0 0 0 0 0"), list.toString());
+
+			list.clear();
+			ASSERT_TRUE(list.isEmpty());
+		}
+
+		TEST(ArrayBasedList, TestAddingZero)
+		{
+			ArrayBasedList linkedList = ArrayBasedList();
+			TestAddingZero(linkedList);
+
+		}
+
+		TEST(PointerBasedLinkedList, TestAddingZero)
+		{
+			PointerBasedLinkedList linkedList = PointerBasedLinkedList();
+			TestAddingZero(linkedList);
 
 		}
 
