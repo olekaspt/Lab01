@@ -5,6 +5,8 @@ Revised 20-Sep-2022
 
 Objective: The goal of this lab is to practice implementing C++ classes, dealing with pointer, memory allocation, memory deletion.
 
+See Code and Lab Report Standards - https://github.com/olekaspt/LabStandards
+
 Assignment:
 1.	Access Lab01 code by cloning this repo - git clone https://github.com/olekaspt/Lab01.git  
 1.	Run the Unit Tests and see that some of them fail.   Now we are ready to provide the implementation needed to ArrayBasedLinkedList and PointerBasedLinkedList.
@@ -12,9 +14,12 @@ Assignment:
 1.	Things to keep in mind, try not to change the signature and data members of class.   As you will only be providing LinkedList.cpp.   So you shouldn’t modify the signature/structure so that the UnitTests will not compile.  As the UnitTests are going to be used to grade the HW.
 
 
+Hints:
+Do the clear(), ToString(), and IsEmpty() methods first.  And then slowly work you way down the tests.
+
 The grade on this assignment will be determined by:  
 75% On having the testcases passing (see note in syllabus about dishonesty)
-20% on code style and programming
+25% on code style and programming
 
 Participation Rubric
 Participation rubric of teammates.  List out for your all team members how much they participated.
