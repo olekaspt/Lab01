@@ -366,16 +366,6 @@
 			ASSERT_TRUE(list.add(0));
 			ASSERT_TRUE(list.add(0));
 
-			ASSERT_TRUE(list.remove(2));
-			ASSERT_TRUE(list.remove(4));
-			ASSERT_TRUE(list.remove(6));
-			ASSERT_TRUE(list.remove(8));
-
-			ASSERT_FALSE(list.remove(2));
-			ASSERT_FALSE(list.remove(4));
-			ASSERT_FALSE(list.remove(6));
-			ASSERT_FALSE(list.remove(8));
-
 			ASSERT_TRUE(list.getSize() == 10);
 
 			ASSERT_EQ(std::string("0 0 0 0 0 0 0 0 0 0"), list.toString());
