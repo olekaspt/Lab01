@@ -1,4 +1,4 @@
-// tests.cpp
+
 #include "LinkedList.h"
 #include <gtest/gtest.h>
 
